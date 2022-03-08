@@ -62,7 +62,7 @@ const Header = () => {
                       />
                       <div className="cartItemDetail">
                         <span>{prod.name}</span>
-                        <span>₹ {prod.price}</span>
+                        <span>$ {prod.price}</span>
                       </div>
                       <AiFillDelete
                         fontSize="20px"

@@ -5,7 +5,7 @@ import SingleProduct from "./SingleProduct";
 const Home = () => {
   const {
     state: { products },
-    productState: { sort, byStock, byFastDelivery, byRating, searchQuery },
+    productState: { sort, searchQuery, byMobile, byLaptop },
   } = CartState();
 
   const transformProducts = () => {
@@ -17,19 +17,19 @@ const Home = () => {
       );
     }
 
-    if (!byStock) {
-      sortedProducts = sortedProducts.filter((prod) => prod.inStock);
+    if (byMobile) {
+      sortedProducts = sortedProducts.filter((prod) => prod.category == "mobile");
     }
 
-    if (byFastDelivery) {
-      sortedProducts = sortedProducts.filter((prod) => prod.fastDelivery);
+    if (byLaptop) {
+      sortedProducts = sortedProducts.filter((prod) => prod.category == "laptop");
     }
 
-    if (byRating) {
-      sortedProducts = sortedProducts.filter(
-        (prod) => prod.ratings >= byRating
-      );
-    }
+    // if (byRating) {
+    //   sortedProducts = sortedProducts.filter(
+    //     (prod) => prod.ratings >= byRating
+    //   );
+    // }
 
     if (searchQuery) {
       sortedProducts = sortedProducts.filter((prod) =>

@@ -27,12 +27,16 @@ export const productReducer = (state, action) => {
       return { ...state, byStock: !state.byStock };
     case "FILTER_BY_DELIVERY":
       return { ...state, byFastDelivery: !state.byFastDelivery };
+    case "FILTER_BY_MOBILE":
+      return { ...state, byMobile: !state.byMobile };
+    case "FILTER_BY_LAPTOP":
+        return { ...state, byLaptop: !state.byLaptop };  
     case "FILTER_BY_RATING":
       return { ...state, byRating: action.payload };
     case "FILTER_BY_SEARCH":
       return { ...state, searchQuery: action.payload };
     case "CLEAR_FILTERS":
-      return { byStock: false, byFastDelivery: false, byRating: 0 };
+      return { byLaptop: "" , byMobile: "", searchQuery: "" };
     default:
       return state;
   }

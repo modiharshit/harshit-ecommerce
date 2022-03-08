@@ -5,7 +5,7 @@ import Rating from "./Rating";
 const Filters = () => {
   const {
     productDispatch,
-    productState: { byStock, byFastDelivery, sort, byRating },
+    productState: { sort, byMobile, byLaptop },
   } = CartState();
 
   // make state for rating
@@ -16,7 +16,7 @@ const Filters = () => {
       <span>
         <Form.Check
           inline
-          label="Ascending"
+          label="Low To High"
           name="group1"
           type="radio"
           id={`inline-1`}
@@ -32,7 +32,7 @@ const Filters = () => {
       <span>
         <Form.Check
           inline
-          label="Descending"
+          label="High to low"
           name="group1"
           type="radio"
           id={`inline-2`}
@@ -48,46 +48,34 @@ const Filters = () => {
       <span>
         <Form.Check
           inline
-          label="Include Out of Stock"
+          label="Mobile"
           name="group1"
           type="checkbox"
           id={`inline-3`}
           onChange={() =>
             productDispatch({
-              type: "FILTER_BY_STOCK",
+              type: "FILTER_BY_MOBILE",
             })
           }
-          checked={byStock}
+          checked={byMobile}
         />
       </span>
       <span>
         <Form.Check
           inline
-          label="Fast Delivery Only"
+          label="Laptop"
           name="group1"
           type="checkbox"
           id={`inline-4`}
           onChange={() =>
             productDispatch({
-              type: "FILTER_BY_DELIVERY",
+              type: "FILTER_BY_LAPTOP",
             })
           }
-          checked={byFastDelivery}
+          checked={byLaptop}
         />
       </span>
-      <span>
-        <label style={{ paddingRight: 10 }}>Rating: </label>
-        <Rating
-          rating={byRating}
-          onClick={(i) =>
-            productDispatch({
-              type: "FILTER_BY_RATING",
-              payload: i + 1,
-            })
-          }
-          style={{ cursor: "pointer" }}
-        />
-      </span>
+
       <Button
         variant="light"
         onClick={() =>
