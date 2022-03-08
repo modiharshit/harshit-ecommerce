@@ -1,24 +1,14 @@
 import { createContext, useContext, useReducer } from "react";
 import { cartReducer, productReducer } from "./Reducers";
 
-import productList from "./../components/productlist.json"
 const Cart = createContext();
 
 const Context = ({ children }) => {
-  // const products = [...Array(20)].map(() => ({
-  //   id: faker.datatype.uuid(),
-  //   name: faker.commerce.productName(),
-  //   price: faker.commerce.price(),
-  //   image: faker.random.image(),
-  //   inStock: faker.random.arrayElement([0, 3, 5, 6, 7]),
-  //   fastDelivery: faker.datatype.boolean(),
-  //   ratings: faker.random.arrayElement([1, 2, 3, 4, 5]),
-  // }));
 
   const products = [{
     "id": 1,
     "name": "iPhone 13",
-    "price": 109.95,
+    "price": 1099.95,
     "description": "Our most advanced dual‐camera system ever. An even brighter Oled display. A lightning‐fast chip that leaves the competition behind. A huge leap in battery life.",
     "category": "mobile",
     "image": "https://images.ctfassets.net/8utyj17y1gom/ZR52UQkCuuxFOKxCR5k5T/0082e2a071c64e7ebee2a8a761319929/iPhone13-midnight-front.png",
@@ -67,7 +57,7 @@ const Context = ({ children }) => {
     "fastDelivery": false,
   }, {
     "id": 6,
-    "name": "Lenovo Legion 5 (15')",
+    "name": "Lenovo Legion 5 (15') HD Display",
     "price": 2049.99,
     "description": "Offering a plethora of performance features for any gamer in a clean, minimalist design, the Legion 5 pairs the 10th Generation Intel Core i7 processor with NVIDIA GeForce GTX graphics, 2933MHz DDR4 memory and M.2 NVMe PCIe SSD storage, all thermally tuned via Legion Coldfront 2.0. Enjoy maximum performance via Dual Burn Support, which pushes the CPU and GPU together for improved frame rates.",
     "category": "mobile",
@@ -97,7 +87,7 @@ const Context = ({ children }) => {
     "fastDelivery": false,
   }, {
     "id": 9,
-    "name": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
+    "name": "WD 2TB Hard Drive",
     "price": 64.99,
     "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
     "category": "laptop",
@@ -137,7 +127,7 @@ const Context = ({ children }) => {
     "fastDelivery": false,
   }, {
     "id": 13,
-    "name": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
+    "name": "Acer SB220Q bi 21.5",
     "price": 599.99,
     "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
     "category": "laptop",
@@ -147,7 +137,7 @@ const Context = ({ children }) => {
     "fastDelivery": true,
   }, {
     "id": 14,
-    "name": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
+    "name": "Samsung 49-Inch Monitor",
     "price": 999.99,
     "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
     "category": "mobile",

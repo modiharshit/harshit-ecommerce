@@ -1,0 +1,6 @@
+footer {
+  flex-shrink: 0;
+  text-align: center;
+  background-color: rgb(177, 175, 175);
+  color: rgb(5, 5, 5);
+}

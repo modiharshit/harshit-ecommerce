@@ -1,5 +1,6 @@
 import { CartState } from "../context/Context";
 import Filters from "./Filters";
+import Footer from "./Footer";
 import SingleProduct from "./SingleProduct";
 
 const Home = () => {
@@ -25,12 +26,6 @@ const Home = () => {
       sortedProducts = sortedProducts.filter((prod) => prod.category == "laptop");
     }
 
-    // if (byRating) {
-    //   sortedProducts = sortedProducts.filter(
-    //     (prod) => prod.ratings >= byRating
-    //   );
-    // }
-
     if (searchQuery) {
       sortedProducts = sortedProducts.filter((prod) =>
         prod.name.toLowerCase().includes(searchQuery)
@@ -41,7 +36,7 @@ const Home = () => {
   };
 
   return (
-    <div className="home">
+    <><div className="home">
       <Filters />
       <div className="productContainer">
         {transformProducts().map((prod) => (
@@ -49,6 +44,8 @@ const Home = () => {
         ))}
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 

@@ -60,6 +60,18 @@
   padding: 20px;
   flex-wrap: wrap;
   justify-content: space-around;
+  background-color: rgb(196, 180, 211);
+}
+
+.about,
+.returns {
+  padding: 20px;
+  background-color: rgb(196, 180, 211);
+}
+
+.contact {
+  padding: 20px;
+  background-color: rgb(196, 180, 211);
 }
 
 .products {
@@ -98,5 +110,13 @@
 
   .products {
     width: 100%;
+  }
+
+  .rowFit {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

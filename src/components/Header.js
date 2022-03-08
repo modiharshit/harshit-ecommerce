@@ -21,13 +21,26 @@ const Header = () => {
   } = CartState();
 
   return (
-    <Navbar bg="dark" variant="dark" style={{ height: 80 }}>
+    <Navbar bg="light" variant="light" expand="lg" style={{ height: 80, backgroundColor:"red" }}>
       <Container>
         <Navbar.Brand>
-          <Link to="/">Shopping Cart</Link>
+          <Link to="/">Harshit's Store</Link>
         </Navbar.Brand>
+
+        <Navbar.Collapse id="navbarScroll">
+        
+        <Nav
+          className="me-auto my-2 my-lg-0"
+          style={{ maxHeight: '100px' }}
+          navbarScroll>
+          <Nav.Link as={Link} to={"/contact"}>Contact</Nav.Link>
+          <Nav.Link as={Link} to={"/about"}>About</Nav.Link>
+          <Nav.Link as={Link} to={"/returns"}>Returns</Nav.Link>
+        </Nav>
+        </Navbar.Collapse>
+
         {useLocation().pathname.split("/")[1] !== "cart" && (
-          <Navbar.Text className="search">
+          <Navbar.Text className="search" style={{marginRight: 10}}>
             <FormControl
               style={{ width: 500 }}
               type="search"
@@ -44,49 +57,11 @@ const Header = () => {
           </Navbar.Text>
         )}
         <Nav>
-          <Dropdown alignright="true">
-            <Dropdown.Toggle variant="success">
-              <FaShoppingCart color="white" fontSize="25px" />
-              <Badge>{cart.length}</Badge>
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu style={{ minWidth: 370 }}>
-              {cart.length > 0 ? (
-                <>
-                  {cart.map((prod) => (
-                    <span className="cartitem" key={prod.id}>
-                      <img
-                        src={prod.image}
-                        className="cartItemImg"
-                        alt={prod.name}
-                      />
-                      <div className="cartItemDetail">
-                        <span>{prod.name}</span>
-                        <span>$ {prod.price}</span>
-                      </div>
-                      <AiFillDelete
-                        fontSize="20px"
-                        style={{ cursor: "pointer" }}
-                        onClick={() =>
-                          dispatch({
-                            type: "REMOVE_FROM_CART",
-                            payload: prod,
-                          })
-                        }
-                      />
-                    </span>
-                  ))}
-                  <Link to="/cart">
-                    <Button style={{ width: "95%", margin: "0 10px" }}>
-                      Go To Cart
-                    </Button>
-                  </Link>
-                </>
-              ) : (
-                <span style={{ padding: 10 }}>Cart is Empty!</span>
-              )}
-            </Dropdown.Menu>
-          </Dropdown>
+        <Link to="/cart">
+          <Button style={{ width: "95%", margin: "0 10px" }}>
+            Proceed to checkout
+          </Button>
+        </Link>
         </Nav>
       </Container>
     </Navbar>
