@@ -1,4 +1,4 @@
-import { Button, Form } from "react-bootstrap";
+import { Button, Col, Form, Row } from "react-bootstrap";
 import { CartState } from "../context/Context";
 
 const Filters = () => {
@@ -10,9 +10,13 @@ const Filters = () => {
   // make state for rating
 
   return (
-    <div className="filters">
-      <span className="title">Filter Products</span>
-      <span>
+   
+   
+    <div className="filters content-align">
+      <Row>        
+       <Col xs={4}>
+       
+       <div className="w-136p">
         <Form.Check
           inline
           label="Low To High"
@@ -27,11 +31,11 @@ const Filters = () => {
           }
           checked={sort === "lowToHigh" ? true : false}
         />
-      </span>
-      <span>
+      </div>
+      <div className="w-136p">
         <Form.Check
           inline
-          label="High to low"
+          label="High To Low"
           name="group1"
           type="radio"
           id={`inline-2`}
@@ -43,8 +47,10 @@ const Filters = () => {
           }
           checked={sort === "highToLow" ? true : false}
         />
-      </span>
-      <span>
+      </div>
+       </Col>
+       <Col xs={4}>
+       <div>
         <Form.Check
           inline
           label="Mobile"
@@ -58,8 +64,8 @@ const Filters = () => {
           }
           checked={byMobile}
         />
-      </span>
-      <span>
+      </div>
+      <div>
         <Form.Check
           inline
           label="Laptop"
@@ -73,18 +79,21 @@ const Filters = () => {
           }
           checked={byLaptop}
         />
-      </span>
+      </div>
 
-      <Button
-        variant="light"
-        onClick={() =>
+      
+       </Col>
+       <Col xs={4}>
+       <Button variant="light"
+          onClick={() =>
           productDispatch({
             type: "CLEAR_FILTERS",
           })
-        }
-      >
+        }>
         Clear Filters
       </Button>
+        </Col>
+    </Row>
     </div>
   );
 };

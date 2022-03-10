@@ -26,6 +26,19 @@ const Home = () => {
       sortedProducts = sortedProducts.filter((prod) => prod.category == "laptop");
     }
 
+    if (byMobile && byLaptop) {
+      sortedProducts = products;
+    } else {
+      if (byMobile) {
+        sortedProducts = sortedProducts.filter((prod) => prod.category === "mobile");
+      }
+
+      if (byLaptop) {
+        sortedProducts = sortedProducts.filter((prod) => prod.category === "laptop");
+      }
+    }
+
+
     if (searchQuery) {
       sortedProducts = sortedProducts.filter((prod) =>
         prod.name.toLowerCase().includes(searchQuery)
@@ -36,9 +49,9 @@ const Home = () => {
   };
 
   return (
-    <><div className="home">
+    <><div>
       <Filters />
-      <div className="productContainer">
+      <div className="productContainer container-fluid content-align">
         {transformProducts().map((prod) => (
           <SingleProduct prod={prod} key={prod.id} />
         ))}

@@ -40,7 +40,7 @@
   color: white;
   padding: 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 20%;
   margin: 10px;
   height: 86vh;
@@ -60,18 +60,19 @@
   padding: 20px;
   flex-wrap: wrap;
   justify-content: space-around;
-  background-color: rgb(196, 180, 211);
+  background-color: rgb(223, 216, 230);
 }
 
 .about,
+.paymentpolicy,
 .returns {
-  padding: 20px;
-  background-color: rgb(196, 180, 211);
+  padding: 30px;
+  background-color: rgb(223, 216, 230);
 }
 
 .contact {
-  padding: 20px;
-  background-color: rgb(196, 180, 211);
+  padding: 30px;
+  background-color: rgb(223, 216, 230);
 }
 
 .products {
@@ -119,4 +120,16 @@
     justify-content: center;
     align-items: center;
   }
+}
+
+.content-align {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.w-136p {
+  width: 136%;
 }

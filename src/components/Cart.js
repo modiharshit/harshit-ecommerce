@@ -18,23 +18,28 @@ const Cart = () => {
   }, [cart]);
 
   return (
-    <div className="home">
-      <div className="productContainer">
-        <ListGroup>
+    <div className="cart">
+      <div className="productContainer container-fluid content-align">
+        <Row>
+          <Col xs={12}>
+          <ListGroup>
           {cart.map((prod) => (
             <ListGroup.Item key={prod.id}>
               <Row>
-                <Col md={2}>
+                <Col md={1}>
                   <Image src={prod.image} alt={prod.name} fluid rounded />
                 </Col>
                 <Col md={2}>
                   <span>{prod.name}</span>
                 </Col>
-                <Col md={2}>$ {prod.price}</Col>
-                <Col md={2}>
+                <Col md={4}>
+                  <span>{prod.description}</span>
+                </Col>
+                <Col md={1}><b>$ {prod.price} </b></Col>
+                <Col md={1}>
                   <Rating rating={prod.ratings} />
                 </Col>
-                <Col md={2}>
+                <Col md={1}>
                   <Form.Control
                     as="select"
                     value={prod.qty}
@@ -62,8 +67,7 @@ const Cart = () => {
                         type: "REMOVE_FROM_CART",
                         payload: prod,
                       })
-                    }
-                  >
+                    }>
                     <AiFillDelete fontSize="20px" />
                   </Button>
                 </Col>
@@ -71,13 +75,21 @@ const Cart = () => {
             </ListGroup.Item>
           ))}
         </ListGroup>
-      </div>
-      <div className="filters summary">
-        <span className="title">Subtotal ({cart.length}) items</span>
-        <span style={{ fontWeight: 700, fontSize: 20 }}>Total: $ {total}</span>
-        <Button type="button" disabled={cart.length === 0}>
-          Proceed to Checkout
-        </Button>
+          </Col>
+        </Row>
+        <Row>
+        <Col xs={12}>
+            <div>
+              <span className="title">Subtotal ({cart.length}) items</span>
+              <br></br>
+              <span style={{ fontWeight: 700, fontSize: 20 }}>Total: $ {Math.round(total)}</span>
+              <br></br>
+              <Button type="button" disabled={cart.length === 0}>
+                Proceed to Payment
+              </Button>
+            </div>
+          </Col>
+        </Row>
       </div>
     </div>
   );

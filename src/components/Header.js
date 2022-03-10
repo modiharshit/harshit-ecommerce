@@ -26,7 +26,7 @@ const Header = () => {
         <Navbar.Brand>
           <Link to="/">Harshit's Store</Link>
         </Navbar.Brand>
-
+        <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
         
         <Nav
@@ -34,7 +34,7 @@ const Header = () => {
           style={{ maxHeight: '100px' }}
           navbarScroll>
           <Nav.Link as={Link} to={"/contact"}>Contact</Nav.Link>
-          <Nav.Link as={Link} to={"/about"}>About</Nav.Link>
+          <Nav.Link as={Link} to={"/paymentpolicy"}>Payment</Nav.Link>
           <Nav.Link as={Link} to={"/returns"}>Returns</Nav.Link>
         </Nav>
         </Navbar.Collapse>

@@ -81,7 +81,7 @@ const Context = ({ children }) => {
     "price": 10.99,
     "description": "Surface Laptop Go - Platinum, Intel Core i5, 4GB RAM, 64GB eMMC, English Keyboard",
     "category": "laptop",
-    "image": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4Av4g?ver=be22&q=90&m=6&h=705&w=1253&b=%23FFFFFFFF&f=jpg&o=f&p=140&aim=true",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRJRaNw-7wR1FtaC8yfNXwymJl_BsNxLsC0oEn0Ke-vwiyc5JGdJTi0ZC7qeXiLlN5vO8xP9GVAJQ53eSUBFJdiCjp0fYJO",
     "ratings": 1,
     "inStock": 20,
     "fastDelivery": false,
