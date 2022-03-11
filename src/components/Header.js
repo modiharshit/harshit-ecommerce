@@ -1,10 +1,8 @@
-import { FaShoppingCart } from "react-icons/fa";
-import { AiFillDelete } from "react-icons/ai";
+
 import {
-  Badge,
   Button,
   Container,
-  Dropdown,
+  Form,
   FormControl,
   Nav,
   Navbar,
@@ -21,7 +19,7 @@ const Header = () => {
   } = CartState();
 
   return (
-    <Navbar bg="light" variant="light" expand="lg" style={{ height: 80, backgroundColor:"red" }}>
+    <Navbar bg="light" variant="light" expand="lg" style={{ height: 80, maxHeight: '300px' ,  backgroundColor:"red" }}>
       <Container>
         <Navbar.Brand>
           <Link to="/">Harshit's Store</Link>
@@ -31,7 +29,7 @@ const Header = () => {
         
         <Nav
           className="me-auto my-2 my-lg-0"
-          style={{ maxHeight: '100px' }}
+          style={{ maxHeight: '300px' }}
           navbarScroll>
           <Nav.Link as={Link} to={"/contact"}>Contact</Nav.Link>
           <Nav.Link as={Link} to={"/paymentpolicy"}>Payment</Nav.Link>
@@ -41,21 +39,23 @@ const Header = () => {
 
         {useLocation().pathname.split("/")[1] !== "cart" && (
           <Navbar.Text className="search" style={{marginRight: 10}}>
+            <Form className="d-flex">
             <FormControl
-              style={{ width: 500 }}
               type="search"
-              placeholder="Search a product..."
-              className="m-auto"
+              placeholder="Search product"
+              className="me-2"
               aria-label="Search"
               onChange={(e) => {
                 productDispatch({
                   type: "FILTER_BY_SEARCH",
                   payload: e.target.value,
                 });
-              }}
-            />
+              }}/>
+            </Form>
+            
           </Navbar.Text>
         )}
+
         <Nav>
         <Link to="/cart">
           <Button style={{ width: "95%", margin: "0 10px" }}>
